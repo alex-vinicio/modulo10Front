@@ -4,6 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+
+	<!-- recurso para usar Ajax-->
+	<script type="text/javascript" src="jquery/jquery-3.5.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+	<!-- JavaScript -->
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+<!-- CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+<!-- Semantic UI theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
+<!-- Bootstrap theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+
+<!-- 
+    RTL version
+-->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.rtl.min.css"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.rtl.min.css"/>
+<!-- Semantic UI theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.rtl.min.css"/>
+<!-- Bootstrap theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.rtl.min.css"/>
     <title>Document</title>
 </head>
 <body>
@@ -24,57 +50,40 @@
     <main>
         <div id="contacto" class="contacto">
             <h2>Prestamos</h2>
-            <form class="formulario" action="#" method="POST">
+            <form class="formulario" action="#" method="POST" id="formPrestamos">
                 <legend>Llena todos los campos</legend>
 
                 <div class="contenedor-campos">
-                    <div class="campo">
+                    <!--<div class="campo">
                         <label>ID</label>
 
-                        <input type="text" name="nombre" placeholder="Ingrese el Id del empleado" required>
-                    </div>
+                        <input type="text" id="nombreP" name="nombre" placeholder="Ingrese el Id del empleado" required>
+                    </div>-->
                     <div class="campo">
                         <label>Cedula</label>
 
-                        <input type="text" name="telefono" placeholder="Ingrese la cedula del usuario">
+                        <input type="number" id="cedulaP" placeholder="Ingrese la cedula del usuario">
                     </div>
                     <div class="campo w-100">
-                        <label>Nombre</label>
+                        <label>Meses de pago</label>
 
-                        <input type="text" name="correo" placeholder="Nombre del Empleado">
-                    </div>
-                    <div class="campo w-100">
-                        <label>Apellido</label>
-
-                        <input type="text" name="correo" placeholder="Apeelido del Empleado">
-                    </div>
-                    <div class="campo w-100">
-                        <label>Cedula Empleado</label>
-
-                        <input type="text" name="correo" placeholder="Ingrese la cedula del empleado">
-                    </div>
-                    <div class="campo w-100">
-                        <label>Fecha Inicio prestamo</label>
-
-                        <input type="date" name="fecha Inicio prestamo" placeholder="Fecha de inicio del prestamo>
-                    </div>
-                    <div class="campo w-100">
-                        <label>Fecha Fin prestamo</label>
-
-                        <input type="date" name="Fecha Fin" placeholder="Ingrese la cedula del empleado">
+                        <input type="number" id="mesPagoP" name="Fecha Fin" min="0" max="5" placeholder="Ejemplo 5">
                     </div>
                     <div class="campo w-100">
                         <label>Monto</label>
 
-                        <input type="text" name="Monto" placeholder="Ingrese el monto del prestamo">
+                        <input type="number" id="montoP" name="monto" min="0" placeholder="ejemplo 300">
                     </div>
                 </div><!--.contenedor-campos-->
                 <div class="enviar">
-                    <input class="boton" type="submit" value="Enviar">
+                    <input class="boton" id="enviarPrestamo" type="submit" value="Enviar">
                 </div>
             </form>
         </div>
     </main>
+	
+	<!-- operaciones del formulario con JavaScript -->
+	<script type="text/javascript" src="js/postPrestamos.js"></script>
 
     <footer class="footer">
         <p>
