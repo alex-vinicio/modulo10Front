@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <h1>Modulo 10</h1>
+    </header>
+
+    <div class=" nav-bg">
+        <nav class="navegacion contenedor">
+            <a href="index.html">Inicio</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="prestamos.html">Prestamos</a>
+            <a href="hojasDeCobro.html">Hojas de Cobro</a>
+            <a href="productosDadosDeBaja.html">Productos dados de Baja</a>
+        </nav>
+    </div>
+
+    <main>
+        <div id="contacto" class="contacto">
+            <h2>Productos Dados de baja</h2>
+            <form class="formulario" action="#" method="POST">
+                <legend>Llena todos los campos</legend>
+
+                <div class="contenedor-campos">
+                    <div class="campo">
+                        <label>Id Producto</label>
+
+                        <input type="text" name="nombre" placeholder="Ingrese el ID del producto dado de baja" required>
+                    </div>
+                    <div class="campo">
+                        <label>Cedula</label>
+
+                        <input type="text" name="cedulaUsuarioo" placeholder="Ingrese la cedula del Usuario">
+                    </div>
+                    <div class="campo w-100">
+                        <label>Nombre Producto</label>
+
+                        <input type="text" name="nombreProducto" placeholder="Ingrese el nombre del Producto Dado de baja">
+                    </div>
+                    <div class="campo w-100">
+                        <label>Fecha Dado de Baja</label>
+
+                        <input type="date" name="nombreProducto" placeholder="Fecha Dado de baja">
+                    </div>
+                    
+                </div><!--.contenedor-campos-->
+                <div class="enviar">
+                    <input class="boton" type="submit" value="Enviar">
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>
+            Todos los derechos reservados © Modulo 10           
+        </p>
+    </footer>
+    
+</body>
+</html>
