@@ -11,7 +11,7 @@ $(document).ready(function() {
 		var idP = cedulaEmpleado+fechaActual.getHours()+fechaActual.getMinutes()+fechaActual.getSeconds();
 		var situacionP = "pendiente";
 		var mesPago = parseInt($formPrestamo.elements.mesPagoP.value);
-		
+		var fechaTransaccion = fechaActual.getDate() + "/" + (fechaActual.getMonth() +(1)) + "/" + fechaActual.getFullYear();
 		//asignando id segun la cedula y el tiempo enviado, con segundos
 		var fechaFinPago = fechaActual.getDate() + "/" + (fechaActual.getMonth() +(mesPago+1)) + "/" + fechaActual.getFullYear();
 		
@@ -20,7 +20,7 @@ $(document).ready(function() {
 		var objArr = [];
 		//creacion del JSon mediante una cadena
 		objArr.push({"idPrestamosEmpleados": idP,
-	    "fechaInicioPrestamo": fechaActual,
+	    "fechaInicioPrestamo": fechaTransaccion,
 	    "fechaFinPrestamo": fechaFinPago,
 	    "montoPrestamo": montoP,
 	    "estadoPrestamo": estadoPrestamo,
