@@ -4,6 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- recurso para usar Ajax-->
+	<script type="text/javascript" src="jquery/jquery-3.5.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+	<!-- JavaScript -->
+	<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+	<!-- Default theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+	<!-- Semantic UI theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
+	<!-- Bootstrap theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+	
+	<!-- 
+	    RTL version
+	-->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.rtl.min.css"/>
+	<!-- Default theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.rtl.min.css"/>
+	<!-- Semantic UI theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.rtl.min.css"/>
+	<!-- Bootstrap theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.rtl.min.css"/>
+    
     <title>Document</title>
 </head>
 <body>
@@ -24,39 +51,36 @@
     <main>
         <div id="contacto" class="contacto">
             <h2>Productos Dados de baja</h2>
-            <form class="formulario" action="#" method="POST">
+            <form class="formulario" id="formProductosDeBaja" action="#" method="POST">
                 <legend>Llena todos los campos</legend>
 
                 <div class="contenedor-campos">
                     <div class="campo">
                         <label>Id Producto</label>
 
-                        <input type="text" name="nombre" placeholder="Ingrese el ID del producto dado de baja" required>
+                        <input type="text" id="idPDB" name="nombre" placeholder="Ingrese el ID del producto dado de baja" required>
                     </div>
                     <div class="campo">
                         <label>Cedula</label>
 
-                        <input type="text" name="cedulaUsuarioo" placeholder="Ingrese la cedula del Usuario">
+                        <input type="number" id="cedulaBodeguero" name="cedulaUsuario" placeholder="Ingrese la cedula del Usuario" required>
                     </div>
                     <div class="campo w-100">
                         <label>Nombre Producto</label>
 
-                        <input type="text" name="nombreProducto" placeholder="Ingrese el nombre del Producto Dado de baja">
-                    </div>
-                    <div class="campo w-100">
-                        <label>Fecha Dado de Baja</label>
-
-                        <input type="date" name="nombreProducto" placeholder="Fecha Dado de baja">
+                        <input type="text" id="nombreProducto" name="nombreProducto" placeholder="Ingrese el nombre del Producto Dado de baja">
                     </div>
                     
                 </div><!--.contenedor-campos-->
                 <div class="enviar">
-                    <input class="boton" type="submit" value="Enviar">
+                    <input class="boton" id="envioProductoDeBaja" type="submit" value="Enviar">
                 </div>
             </form>
         </div>
     </main>
-
+	<!-- operaciones del formulario con JavaScript -->
+	<script type="text/javascript" src="js/postProductoDeBaja.js"></script>
+	
     <footer class="footer">
         <p>
             Todos los derechos reservados © Modulo 10           
