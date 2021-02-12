@@ -72,8 +72,8 @@ h3 {
     padding: 1rem 2rem;
     color: var(--blanco);
     text-decoration: none;
-    font-size: 1.4rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 500;
 }
 .navegacion a:hover {
     background-color: var(--primario);
