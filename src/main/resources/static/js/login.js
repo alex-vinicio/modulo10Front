@@ -12,8 +12,10 @@ $(document).ready(function() {
 			type: 'GET',
 		        url: "http://localhost:8080/api/prestamo/login/" + cedula +"/"+pwd,
 				success: function(result) {
-				console.log(result);
-				alertify.alert('Solicitud de prestamo guardado !')
+					localStorage.id = result.idUsuario;
+					localStorage.idRol = result.rol;
+				console.log(result.idUsuario, result.rol);
+				alertify.alert('Usuario correcto !')
 				
 				setTimeout(
 					function () {

@@ -1,20 +1,25 @@
 $(document).ready(function () {
                 $.ajax({
                     type: 'GET',
-                    url: 'http://localhost:8080/api/hojasDeCobro',
+                    url: 'http://localhost:8080/api/hojasDeCobros',
                     success: function (data) {
                         var tr = [];
-                        
-                        
+                        console.log(data)
+                        aux = null;
                          for (var i = 0; i < data.length; i++) {
                          	tr.push('<tr>');
-                         	tr.push('<td>' + i + '</td>');
+                         	tr.push('<td>' + (i+1) + '</td>');
                             tr.push('<td>' + data[i].idHojaDeCobro + '</td>');
-                            tr.push('<td>' + data[i].fkCiUsuario + '</td>');
-                            tr.push('<td>' + data[i].cantidadApagar + '</td>');
+                            tr.push('<td>' + data[i].ciUsuario + '</td>');
+                            tr.push('<td>' + data[i].fechaTransaccion + '</td>');
                             tr.push('<td>' + data[i].sector + '</td>');
-                            tr.push('<td>' + data[i].tipoDePago + '</td>');
-							tr.push('<td>' + data[i].fechaTransaccion + '</td>');
+                            tr.push('<td>' + data[i].cantidadApagar + '</td>');
+							if(data[i].tipoDePago.efectivo === true){
+								aux="efectivo";
+							}else{
+								aux="credito";
+							}
+							tr.push('<td>' + aux + '</td>');
 							tr.push('<td> <a href="#" onclick="aprobar(1)">aprobar</a></td>');
                             tr.push('<td>');
 							tr.push('<a data-toggle="modal" data-target="#modalwarning'+data[i].idHojaDeCobro+'" class="btn btn-primary"><img width="20px" src="img/eliminar.png"></a>');

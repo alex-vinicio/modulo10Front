@@ -8,7 +8,7 @@
                         
                          for (var i = 0; i < data.length; i++) {
                          	tr.push('<tr>');
-                         	tr.push('<td>' + i + '</td>');
+                         	tr.push('<td>' + (i+1) + '</td>');
                             tr.push('<td>' + data[i].idPrestamosEmpleados + '</td>');
                             tr.push('<td>' + data[i].fkEmpleadoPrestamo + '</td>');
                             tr.push('<td>' + data[i].fechaInicioPrestamo + '</td>');
