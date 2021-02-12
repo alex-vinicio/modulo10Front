@@ -51,28 +51,25 @@
             <h2>Listados de Productos Dados de Baja</h2>
             <div style="padding: 50px; margin: 10px;">
             <div class="table-responsive">
-            	<table id="tablePrestamos" class="table table-striped">
+            	<table id="tableHojasDeCobro" class="table table-striped">
             		<thead>
             			<tr>
             				<td>+</td>
             				<td>id</td>
             				<td>
 	            				<div >  
-				                    <form name="searchNombreEmpleado">
-				                        <input type="text" class="form-control" name="nombreEmpleado" placeholder="Nombre: ..">
+				                    <form name="searchIdProductoDadoDeBaja">
+				                        <input type="text" class="form-control" name="nombreIdProductoDadoDeBaja" placeholder="Ingrese el Id producto dado de Baja">
 				                    </form>
 				                </div>
 		                	</td>
-            				<td>Fecha solicitud</td>
-            				<td>Estado prestamo</td>
-            				<td>Monto prestamo</td>
-            				<td>N° meses de pagos</td>
-            				<td>Situacion del prestamo</td>
-            				<td>accion</td>
+            				<td>Fk Ci Usuario</td>
+            				<td>Nombre del Productor</td>
+            				<td>Fecha Producto Dado de Baja</td>
             				<td>accion</td>
             			</tr>
             		</thead>
-            		<tbody id="listadoPrestamo"></tbody>
+            		<tbody id="listadoProductosDadosDeBaja"></tbody>
             	</table>
             	</div>
             </div>
