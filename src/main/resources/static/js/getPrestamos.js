@@ -1,4 +1,6 @@
- $(document).ready(function () {
+const $formEstCrHidden = document.forms.hiddenEstCr
+const $divTabla = document.getElementById('listadoPrestamo');
+$(document).ready(function () {
                 $.ajax({
                     type: 'GET',
                     url: 'http://localhost:8080/api/prestamos',
@@ -42,6 +44,32 @@
                         }
                         
                          $('#listadoPrestamo').append($(tr.join('')));
+						/*addEventSearchCurso()
+						
+						//Buscador------------------
+						function addEventSearchCurso(){
+						    const form = document.searchNombreEmpleado
+						    form.nombreEmpleado.value = $formEstCrHidden.cedula.value
+						
+						    form.addEventListener('submit', async (event)=>{
+						        event.preventDefault()
+						        const search = form.elements.nombreEmpleado.value
+						        $formEstCrHidden.cedula.value = search
+						        let lista = []
+						        const listaCursos = data;
+						        $divTabla.innerHTML=""
+						
+						        if(search === ""){
+						            //await getCursos(listaCursos,$estudiantesCursos)
+						        }else{
+						            listaCursos.forEach((lt)=>{ 
+						                if(lt.fkEmpleadoPrestamo.indexOf(search) !== -1){ lista.push(lt) } }) 
+						            //await getCursos(lista,$estudiantesCursos)
+						        }
+						    })
+						}*/
+						
+
                     },  
                  });
                  $(document).delegate('.borrar', 'click', function () {

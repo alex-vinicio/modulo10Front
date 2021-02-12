@@ -14,7 +14,7 @@ $(document).ready(function() {
 				success: function(result) {
 					localStorage.id = result.idUsuario;
 					localStorage.idRol = result.rol;
-				console.log(result.idUsuario, result.rol);
+			
 				alertify.alert('Usuario correcto !')
 				
 				setTimeout(

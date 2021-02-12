@@ -11,16 +11,41 @@
 	<!-- JavaScript -->
 	<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 	
+	<!-- CSS -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+	<!-- Default theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+	<!-- Semantic UI theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
+	<!-- Bootstrap theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+	
+	<!-- 
+	    RTL version
+	-->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.rtl.min.css"/>
+	<!-- Default theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.rtl.min.css"/>
+	<!-- Semantic UI theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.rtl.min.css"/>
+	<!-- Bootstrap theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.rtl.min.css"/>
+    
     <title>Modulo 10</title>
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.0/normalize.css">
     <link href="https://fonts.googleapis.com/css?family=Krub:400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+	<script type="text/javascript" src="js/cerrarSesion.js"></script>
     <header class="header">
-        <h1>Modulo 10</h1>
-    </header>   
+        <h1>Modulo 10
+        	<div style="float:right; margin: 5px;">
+        		<button id="menu" onclick="menu()">Menu</button>
+        	</div>
+        </h1>
+        
+    </header>  
 
     <div class="hero">
         <div class="contenido-hero">
