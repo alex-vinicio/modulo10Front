@@ -44,7 +44,7 @@ $(document).ready(function() {
 				
 				setTimeout(
 					function () {
-						window.location.href = "index.html";
+						window.location.href = "menu.html";
 					}, 3000);
 			},
 			error: function (xhr, exception) {
