@@ -35,6 +35,7 @@ function generalTable(data){
 function listPrestamos(data){
 							var tr = [];
 	                         for (var i = 0; i < data.length; i++) {
+								var aux = '+data[i].idPrestamosEmpleados+';
 	                         	tr.push('<tr>');
 	                         	tr.push('<td>' + (i+1) + '</td>');
 	                            tr.push('<td>' + data[i].idPrestamosEmpleados + '</td>');
@@ -44,7 +45,7 @@ function listPrestamos(data){
 	                            tr.push('<td>' + data[i].montoPrestamo + '</td>');
 								tr.push('<td>' + data[i].mesesPago + '</td>');
 								tr.push('<td>' + data[i].situacionPrestamo + '</td>');
-								tr.push('<td> <a href="#" onclick="aprobar(1)">aprobar</a></td>');
+								tr.push(`<td> <a onclick="aprobar('${data[i].idPrestamosEmpleados}')"><img width="35px" src="img/aprobar.png"></a></td>`);
 	                            tr.push('<td>');
 								tr.push('<a data-toggle="modal" data-target="#modalwarning'+data[i].idPrestamosEmpleados+'" class="btn btn-primary"><img width="20px" src="img/eliminar.png"></a>');
 								tr.push('<div class="modal modal-warning fade in" id="modalwarning'+data[i].idPrestamosEmpleados+'">');
@@ -68,7 +69,7 @@ function listPrestamos(data){
 								tr.push('</td>');
 	                            tr.push('</tr>');
 	                        }
-	                        
+	                        //tr.push('<td> <a href=modificarPublicacion.html?id=' + data[i].id + ' class="btn btn-primary"><img src="img/editar.png"></a></td>');
 	                         $('#listadoPrestamo').append($(tr.join('')));
 }
 //Buscador------------------
@@ -93,3 +94,29 @@ function addEventSearchCurso(data){
 		}
 	 })
 }
+function aprobar(id){
+	console.log(id);
+	var aprobacion = true;
+	$.ajax({
+		type: "PUT",
+		url: "http://localhost:8080/api/prestamo/aprobacion/"+id+"/"+aprobacion+"/"+localStorage.id,
+		cache: false,
+		processData:false,
+		contentType:false,
+		success: function() {
+			console.log('cambio exitoso!');
+			window.location.href = "prestamosLista.html";
+		},
+		error: function (xhr, exception) {
+			
+			console.log(xhr)
+				if (xhr.status === 0)
+					alert('Error : ' + xhr.status + 'Usuario ya tiene un prestamo en curso!'+exception);
+				else{
+					alert('Error : ' + xhr.status + ' Usuario ya tiene un prestamo en curso!');
+				}
+				
+		}
+	});
+}
+	

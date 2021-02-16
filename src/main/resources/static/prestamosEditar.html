@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+
+	<!-- recurso para usar Ajax-->
+	<script type="text/javascript" src="jquery/jquery-3.5.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+	<!-- JavaScript -->
+	<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+	<!-- Default theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+	<!-- Semantic UI theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
+	<!-- Bootstrap theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+	
+	<!-- 
+	    RTL version
+	-->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.rtl.min.css"/>
+	<!-- Default theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.rtl.min.css"/>
+	<!-- Semantic UI theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.rtl.min.css"/>
+	<!-- Bootstrap theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.rtl.min.css"/>
+    
+	<title>Document</title>
+</head>
+<body>
+    <script type="text/javascript" src="js/cerrarSesion.js"></script>
+    <header class="header">
+        <h1>Modulo 10
+        	<div style="float:right; margin: 5px;">
+        		<button id="iniciarSesion" onclick="ingresar()" href="index.html">Iniciar sesion</button>
+        		<button id="cerrarSesion" onclick="cerrar()">Cerrar sesion</button>
+        	</div>
+        </h1>
+    </header>
+	<script type="text/javascript" src="js/verificarUser1.js"></script>
+    <div class=" nav-bg">
+        <nav class="navegacion contenedor">
+            <a href="menu.html">Menu</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="prestamos.html">Prestamos</a>
+            <a href="hojasDeCobro.html">Hojas de Cobro</a>
+            <a href="productosDadosDeBaja.html">Productos dados de Baja</a>
+            <a href="prestamosLista.html">Lista de Prestamos</a>
+            <a href="hojasDeCobroLista.html">Lista Hojas de Cobro</a>
+            <a href="productosDadosDeBajaLista.html">Lista Productos dados de Baja</a>
+            
+            
+        </nav>
+    </div>
+
+    <main>
+    	<script type="text/javascript" src="js/updatePrestamos.js"></script>
+        <div id="contacto" class="contacto">
+            <h2>Prestamos</h2>
+            <form class="formulario" action="#" method="POST" id="formPrestamos">
+                <legend>Llena todos los campos</legend>
+
+                <div class="contenedor-campos">
+                    <!--<div class="campo">
+                        <label>ID</label>
+
+                        <input type="text" id="nombreP" name="nombre" placeholder="Ingrese el Id del empleado" required>
+                    </div>-->
+                    <div class="campo">
+                        <label>Cedula</label>
+
+                        <input type="number" id="cedulaP" placeholder="Ingrese la cedula del usuario" required>
+                    </div>
+                    <div class="campo w-100">
+                        <label>Meses de pago</label>
+
+                        <input type="number" id="mesPagoP" name="Fecha Fin" min="0" max="5" placeholder="Ejemplo 5" required>
+                    </div>
+                    <div class="campo w-100">
+                        <label>Monto</label>
+
+                        <input type="number" id="montoP" name="monto" min="0" placeholder="ejemplo 300" required>
+                    </div>
+                </div><!--.contenedor-campos-->
+                <div class="enviar">
+                    <input class="boton" id="enviarPrestamo" type="submit" value="Enviar">
+                </div>
+            </form>
+        </div>
+    </main>
+	
+	<!-- operaciones del formulario con JavaScript -->
+	<script type="text/javascript" src="js/postPrestamos.js"></script>
+
+    <footer class="footer">
+        <p>
+            Todos los derechos reservados © Modulo 10           
+        </p>
+    </footer>
+    
+</body>
+</html>
