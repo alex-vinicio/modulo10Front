@@ -32,12 +32,8 @@
 	<title>Document</title>
 </head>
 <body>
-    <script type="text/javascript" src="js/cerrarSesion.js"></script>
     <header class="header">
-        <h1>Modulo 10
-        	
-        </h1>
-        
+        <h1>Modulo 10</h1>
     </header>
 	<script type="text/javascript" src="js/verificarUser.js"></script>
     <div class=" nav-bg">
@@ -50,34 +46,37 @@
             <a href="prestamosLista.html">Lista de Prestamos</a>
             <a href="hojasDeCobroLista.html">Lista Hojas de Cobro</a>
             <a href="productosDadosDeBajaLista.html">Lista Productos dados de Baja</a>
-            <button class="botonIC" id="cerrarSesion" onclick="cerrar()">Cerrar sesion</button>
+            
+            
         </nav>
     </div>
 
     <main>
         <div id="contacto" class="contacto">
-            <h2>Listados de Productos Dados de Baja</h2>
+            <h2>Listados de hojas de Cobro</h2>
             <div style="padding: 50px; margin: 10px;">
             <div class="table-responsive">
-            	<table id="tableHojasDeCobro" class="table table-striped">
+            	<table id="tablePrestamos" class="table table-striped">
             		<thead>
             			<tr>
             				<td>+</td>
             				<td>id</td>
             				<td>
 	            				<div >  
-				                    <form name="searchIdProductoDadoDeBaja">
-				                        <input type="text" class="form-control" name="nombreIdProductoDadoDeBaja" placeholder="Ingrese el Id producto dado de Baja">
+				                    <form name="searchNombreEmpleado">
+				                        <input type="text" class="form-control" name="nombreEmpleado" placeholder="Nombre: ..">
 				                    </form>
 				                </div>
 		                	</td>
-            				<td>Fk Ci Usuario</td>
-            				<td>Nombre del Productor</td>
-            				<td>Fecha Producto Dado de Baja</td>
+            				<td>Fecha solicitud</td>
+            				<td>Sector</td>
+            				<td>Monto</td>
+            				<td>Tipo pago</td>
+            				<td>accion</td>
             				<td>accion</td>
             			</tr>
             		</thead>
-            		<tbody id="listadoProductosDadosDeBaja"></tbody>
+            		<tbody id="listadoHojaDeCobro"></tbody>
             	</table>
             	</div>
             </div>

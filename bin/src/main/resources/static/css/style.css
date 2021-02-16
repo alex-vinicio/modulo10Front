@@ -62,13 +62,6 @@ h3 {
     flex-direction: column;
     align-items: center;
 }
-
-.botonIniciar{
-	
-}
-.botonCerrar{
-	
-}
 @media (min-width:768px) {
     .navegacion {
         flex-direction: row;
@@ -153,22 +146,7 @@ h3 {
     font-size: 1.2rem;
     border:none;
 }
-
-.botonIC {
-    background-color: var(--primario);
-    color: var(--blanco);
-    margin-top: .5rem;
-    padding: .2rem 3rem;
-    border-radius: 5px;
-    font-weight: 700;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    border:none;
- 
-}
-.boton:hover,
-.botonIC:hover{
+.boton:hover{
     cursor: pointer;
 }
 .servicios {
