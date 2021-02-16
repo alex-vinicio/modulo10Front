@@ -7,7 +7,6 @@ $(document).ready(function() {
 		var cedula = $formLogin.elements.usuario.value;
 		var pwd = $formLogin.elements.passw.value;
 		
-		console.log("prueba")
 		$.ajax({
 			type: 'GET',
 		        url: "http://localhost:8080/api/prestamo/login/" + cedula +"/"+pwd,
