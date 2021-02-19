@@ -67,18 +67,23 @@
             				<td>
 	            				<div >  
 				                    <form name="searchIdProductoDadoDeBaja">
-				                        <input type="text" class="form-control" name="nombreIdProductoDadoDeBaja" placeholder="Ingrese el Id producto dado de Baja">
+				                        <input type="text" class="form-control" name="nombreIdProductoDadoDeBaja" placeholder="Ingrese nombre:">
 				                    </form>
 				                </div>
 		                	</td>
-            				<td>Fk Ci Usuario</td>
-            				<td>Nombre del Productor</td>
-            				<td>Fecha Producto Dado de Baja</td>
+            				<td>CI encargado de operacion</td>
+            				<td>Fecha de caducidad</td>
+            				<td>estado</td>
+            				<td>requiere</td>
+            				<td>accion</td>
             				<td>accion</td>
             			</tr>
             		</thead>
             		<tbody id="listadoProductosDadosDeBaja"></tbody>
             	</table>
+            	<form name="hiddenEstCr" id="hiddenEstCr">
+			            <input type="hidden" name="nombrePDB" value="">
+			    </form>
             	</div>
             </div>
         </div>
@@ -89,7 +94,7 @@
 	<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>	
 
 	<!--datatables-->
-	<script type="text/javascript" src="js/getHojasDeCobro.js"></script>
+	<script type="text/javascript" src="js/getProductoDeBaja.js"></script>
 	<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

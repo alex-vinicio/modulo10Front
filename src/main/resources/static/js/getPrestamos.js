@@ -1,4 +1,4 @@
-const $formEstCrHidden = document.forms.hiddenEstCr
+const $formEstCrHidden = document.forms.searchIdProductoDadoDeBaja
 const $divTabla = document.getElementById('listadoPrestamo');
 $(document).ready(function () {
                 $.ajax({
