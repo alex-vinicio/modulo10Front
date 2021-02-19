@@ -41,6 +41,11 @@
         </h1>
         
     </header>
+    <script>
+	$(document).ready(function() {
+		document.getElementById("cedulaP").value = localStorage.id;
+	});
+	</script>
 	<script type="text/javascript" src="js/verificarUser1.js"></script>
     <div class=" nav-bg">
         <nav class="navegacion contenedor">
@@ -61,6 +66,11 @@
     <main>
         <div id="contacto" class="contacto">
             <h2>Prestamos</h2>
+            <div style="margin-right:20%;">
+            	<button class="boton" style="float: right;" onclick="listarPrestamo()"><a>Solicitudes</a></button>
+            </div>
+            
+            <br><br><br>
             <form class="formulario" action="#" method="POST" id="formPrestamos">
                 <legend>Llena todos los campos</legend>
 
@@ -73,7 +83,7 @@
                     <div class="campo">
                         <label>Cedula</label>
 
-                        <input type="number" id="cedulaP" placeholder="Ingrese la cedula del usuario" required>
+                        <input type="number" id="cedulaP" placeholder="Ingrese la cedula del usuario" required disabled="disabled">
                     </div>
                     <div class="campo w-100">
                         <label>Meses de pago</label>

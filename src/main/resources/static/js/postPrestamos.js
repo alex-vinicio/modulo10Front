@@ -58,3 +58,7 @@ $(document).ready(function() {
 		});
 	});
 });
+
+function listarPrestamo(){
+	window.location.href = "listarPrestamoUser.html";
+}
