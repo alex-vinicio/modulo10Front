@@ -60,5 +60,5 @@ $(document).ready(function() {
 });
 
 function listarPrestamo(){
-	window.location.href = "listarPrestamoUser.html";
+	window.location.href = "prestamosListaUsuario.html";
 }
