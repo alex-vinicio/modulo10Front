@@ -36,6 +36,7 @@ function generalTable(data){
 	
 function listPrestamos(data){
 							var tr = [];
+							if(data.length !== 0){
 	                         for (var i = 0; i < data.length; i++) {
 								var aux = '+data[i].idPrestamosEmpleados+';
 	                         	tr.push('<tr>');
@@ -71,8 +72,13 @@ function listPrestamos(data){
 								tr.push('</td>');
 	                            tr.push('</tr>');
 	                        }
+						}else{
+							tr.push('<tr>');
+                         	tr.push('<td colspan="10" > No hay datos para mostrar</td>');
+							tr.push('</tr>');
+						}
 	                        //tr.push('<td> <a href=modificarPublicacion.html?id=' + data[i].id + ' class="btn btn-primary"><img src="img/editar.png"></a></td>');
-	                         $('#listadoPrestamo').append($(tr.join('')));
+	                     $('#listadoPrestamo').append($(tr.join('')));
 }
 //Buscador------------------
 function addEventSearchCurso(data){

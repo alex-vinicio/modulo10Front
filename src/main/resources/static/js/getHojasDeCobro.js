@@ -1,12 +1,42 @@
+const $formEstCrHidden = document.forms.hiddenEstCr
+const $divTabla = document.getElementById('listadoHojaDeCobro');
 $(document).ready(function () {
 				//comentario
                 $.ajax({
                     type: 'GET',
                     url: 'http://localhost:8080/api/hojasDeCobros',
                     success: function (data) {
-                        var tr = [];
-                        console.log(data)
+                        generalTable(data);
+                    },  
+                 });
+                 $(document).delegate('.borrar', 'click', function () {
+                    var id = $(this).attr('id');
+                    var parent = $(this).parent().parent();
+                    $.ajax({
+                        type: "DELETE",
+                        url: "http://localhost:8080/api/hojasDeCobro/delete/" + id,
+                        cache: false,
+                        success: function () {
+                            parent.fadeOut('slow', function () {
+                                $(this).remove();
+                            });
+                            location.reload(true)
+                        }
+                    });
+                }); 
+});
+
+function generalTable(data){
+	$('#listadoPrestamo').innerHTML="";
+							
+	listPrestamos(data)
+	addEventSearchCurso(data) 
+}
+
+function listPrestamos(data){
+						var tr = [];
                         aux = null;
+						if(data.length !== 0){
                          for (var i = 0; i < data.length; i++) {
                          	tr.push('<tr>');
                          	tr.push('<td>' + (i+1) + '</td>');
@@ -44,24 +74,36 @@ $(document).ready(function () {
 							tr.push('</div>	');
 							tr.push('</td>');
                             tr.push('</tr>');
-                        }
+                        	}
+						}else{
+							tr.push('<tr>');
+                         	tr.push('<td colspan="9" > No hay datos para mostrar</td>');
+							tr.push('</tr>');
+						}
                         
                          $('#listadoHojaDeCobro').append($(tr.join('')));
-                    },  
-                 });
-                 $(document).delegate('.borrar', 'click', function () {
-                    var id = $(this).attr('id');
-                    var parent = $(this).parent().parent();
-                    $.ajax({
-                        type: "DELETE",
-                        url: "http://localhost:8080/api/hojasDeCobro/delete/" + id,
-                        cache: false,
-                        success: function () {
-                            parent.fadeOut('slow', function () {
-                                $(this).remove();
-                            });
-                            location.reload(true)
-                        }
-                    });
-                }); 
-});
+}
+
+//Buscador------------------
+function addEventSearchCurso(data){
+	console.log(data)
+	const form = document.searchNombreEmpleado
+	form.nombreEmpleado.value = $formEstCrHidden.cedula.value
+						
+	form.addEventListener('submit', async (event)=>{
+		event.preventDefault()
+		const search = form.elements.nombreEmpleado.value
+		$formEstCrHidden.cedula.value = search
+		let lista = [];
+		const listaPersonas = data;
+		$divTabla.innerHTML=""
+							
+		if(search === ""){
+			listPrestamos(listaPersonas)
+		}else{
+			listaPersonas.forEach((lt)=>{ 
+			if(lt.fkCiUsuario.indexOf(search) !== -1){ lista.push(lt) } }) 
+				listPrestamos(lista);
+		}
+	 })
+}

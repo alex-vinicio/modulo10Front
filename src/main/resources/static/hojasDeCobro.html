@@ -35,6 +35,11 @@
 </head>
 <body>
     <script type="text/javascript" src="js/cerrarSesion.js"></script>
+     <script>
+		$(document).ready(function() {
+			document.getElementById("cedulaCliente").value = localStorage.id;
+		});
+	</script>
     <header class="header">
         <h1>Modulo 10
         	
@@ -61,42 +66,40 @@
     <main>
         <div id="contacto" class="contacto">
             <h2>Hoja de cobro</h2>
-            <form class="formulario" action="#" method="POST">
-                <legend>Llena todos los campos</legend>
+            <form class="formulario" action="#" method="POST" id="formHDC">
 
                 <div class="contenedor-campos">
                     <div class="campo">
                         <label>ID</label>
 
-                        <input type="text" id="idHDC" name="nombre" placeholder="Ingrese el ID de la hoja de cobro" required>
+                        <input type="text" id="idHDC" name="idHDC" placeholder="BDDF2" required>
                     </div>
                     <div class="campo">
                         <label>Cedula</label>
 
-                        <input type="number" id="cedulaCliente" name="id" placeholder="Ingrese Num. cedula" required>
+                        <input type="number" id="cedulaCliente" name="cedulaCliente" placeholder="" required  disabled="disabled">
                     </div>
                     <div class="campo w-100">
                         <label>Cantidad a Pagar</label>
 
-                        <input type="number" id="antidadPagoHDC" name="cantidadAPagar" placeholder="Ingrese la Cantidad a Pagar" required>
+                        <input type="number" id="cantidadAPagar" name="cantidadAPagar" min=0 placeholder="500" required>
                     </div>
                     <div class="campo w-100">
                         <label>Sector</label>
 
-                        <input type="text" id="sectorHDC" name="cantidadAPagar" placeholder="Ingrese el Sector">
+                        <input type="text" id="sectorHDC" name="sectorHDC" placeholder="Ingrese el Sector" required>
                     </div>
                     <div class="campo w-100">
                         <label>Tipo de pago</label>
 
-                        <select id="tipoPago">
+                        <select id="tipoPago" name="tipoPago">
                         	<option value="transaccionBancaria">Transacion bancaria</option>
                         	<option value="efectivo"> Dinero en efectivo</option>
                         </select>
                     </div>
-                   
                 </div><!--.contenedor-campos-->
                 <div class="enviar">
-                    <input class="boton" type="submit" value="Enviar">
+                    <input class="boton" id="enviarHDC" type="submit" value="Enviar">
                 </div>
             </form>
         </div>
