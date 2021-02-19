@@ -24,6 +24,7 @@ $(document).ready(function () {
                         }
                     });
                 }); 
+                //comentario
 });
 function generalTable(data){
 	$('#listadoPrestamo').innerHTML="";
