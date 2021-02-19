@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-
-	<!-- recurso para usar Ajax-->
+    
+    <!-- recurso para usar Ajax-->
 	<script type="text/javascript" src="jquery/jquery-3.5.0.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 	<!-- JavaScript -->
 	<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 	
 	<!-- CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
 	<!-- Default theme -->
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
@@ -21,6 +20,9 @@
 	<!-- Bootstrap theme -->
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
 	
+	<!-- 
+	    RTL version
+	-->
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.rtl.min.css"/>
 	<!-- Default theme -->
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.rtl.min.css"/>
@@ -29,7 +31,7 @@
 	<!-- Bootstrap theme -->
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.rtl.min.css"/>
     
-	<title>Document</title>
+    <title>Document</title>
 </head>
 <body>
     <script type="text/javascript" src="js/cerrarSesion.js"></script>
@@ -39,10 +41,11 @@
         </h1>
         
     </header>
-	<script type="text/javascript" src="js/verificarUser.js"></script>
+	//<script type="text/javascript" src="js/verificarUser.js"></script>
+	<script type="text/javascript" src="js/cargarHojasDeCobroEdit.js"></script>
     <div class=" nav-bg">
         <nav class="navegacion contenedor">
-            <a href="menu.html">Menu</a>
+            <a href="index.html">Menu</a>
             <a href="nosotros.html">Nosotros</a>
             <a href="prestamos.html">Prestamos</a>
             <a href="hojasDeCobro.html">Hojas de Cobro</a>
@@ -51,7 +54,6 @@
             <a href="hojasDeCobroLista.html">Lista Hojas de Cobro</a>
             <a href="productosDadosDeBajaLista.html">Lista Productos dados de Baja</a>
             <button class="botonIC" id="cerrarSesion" onclick="cerrar()">Cerrar sesion</button>
-        	
             
             
         </nav>
@@ -59,50 +61,58 @@
 
     <main>
         <div id="contacto" class="contacto">
-            <h2>Listados de hojas de Cobro</h2>
-            <div style="padding: 50px; margin: 10px;">
-            <div class="table-responsive">
-            	<table id="tablePrestamos" class="table table-striped">
-            		<thead>
-            			<tr>
-            				<td>+</td>
-            				<td>id</td>
-            				<td>
-	            				<div >  
-				                    <form name="searchNombreEmpleado">
-				                        <input type="text" class="form-control" name="nombreEmpleado" placeholder="Nombre: ..">
-				                    </form>
-				                </div>
-		                	</td>
-            				<td>Fecha solicitud</td>
-            				<td>Sector</td>
-            				<td>Monto</td>
-            				<td>Tipo pago</td>
-            				<td>accion</td>
-            				<td>accion</td>
-            			</tr>
-            		</thead>
-            		<tbody id="listadoHojaDeCobro"></tbody>
-            	</table>
-            	</div>
-            </div>
+            <h2>Hoja de cobro</h2>
+            <form class="formulario" action="#" method="POST" id="formHojasDeCobro">
+                <legend>Llena todos los campos</legend>
+
+                <div class="contenedor-campos">
+                    <div class="campo">
+                        <label>ID</label>
+
+                        <input type="text" id="idHDC" name="idHDC" placeholder="Ingrese el ID de la hoja de cobro" required disabled="disabled">
+                    </div>
+                    <div class="campo">
+                        <label>Cedula</label>
+
+                        <input type="number" id="cedulaCliente" name="cedulaCliente" placeholder="Ingrese Num. cedula" required disabled="disabled">
+                    </div>
+                    <div class="campo w-100">
+                        <label>Cantidad a Pagar</label>
+
+                        <input type="number" id="cantidadPagoHDC" name="cantidadpagoHDC" placeholder="Ingrese la Cantidad a Pagar" required>
+                    </div>
+                    <div class="campo w-100">
+                        <label>Sector</label>
+
+                        <input type="text" id="sectorHDC" name="sectorHdc" placeholder="Ingrese el Sector">
+                    </div>
+                    <div class="campo w-100">
+                        <label>Tipo de pago</label>
+
+                        <select id="tipoPago" required disabled="disabled">
+                        	<option value="transaccionBancaria">Transacion bancaria</option>
+                        	<option value="efectivo"> Dinero en efectivo</option>
+                        </select>
+                    </div>
+                   
+                </div><!--.contenedor-campos-->
+               
+                <div class="enviar">
+                	<button style="margin: 15px;" class="boton" id="cancelar"  type="submit" value="Cancelar" ><a href="hojasDeCobroListaUsuario.html">Cancelar</a></button>
+                    <input style="margin: 15px;" class="boton" id="enviarHojaDeCobro" type="submit" value="Enviar">
+                </div>
+            </form>
         </div>
     </main>
+
+	<!-- operaciones del formulario con JavaScript -->
+	<script type="text/javascript" src="js/putHojasDeCobro.js"></script>
 	
-	<!--datatables-->
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css" />
-	<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>	
-
-	<!--datatables-->
-	<script type="text/javascript" src="js/getHojasDeCobroUser.js"></script>
-	<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
     <footer class="footer">
         <p>
             Todos los derechos reservados © Modulo 10           
         </p>
     </footer>
+    
 </body>
 </html>
